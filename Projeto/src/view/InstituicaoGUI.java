@@ -19,7 +19,7 @@ public class InstituicaoGUI extends JFrame {
 	private JTextField textFieldAno;
 	private JLabel lblCodMec;
 	private JLabel lblNome;
-	private JLabel lblAnoDeFundação;
+	private JLabel lblAnoDeFundacao;
 	private JLabel lblTipo;
 	/**
 	 * Launch the application.
@@ -69,10 +69,10 @@ public class InstituicaoGUI extends JFrame {
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
 		
-		lblAnoDeFundação = new JLabel("Ano de Fundação");
-		lblAnoDeFundação.setFont(new Font("Calibri", Font.PLAIN, 17));
-		lblAnoDeFundação.setBounds(26, 129, 127, 28);
-		contentPane.add(lblAnoDeFundação);
+		lblAnoDeFundacao = new JLabel("Ano de Fundação");
+		lblAnoDeFundacao.setFont(new Font("Calibri", Font.PLAIN, 17));
+		lblAnoDeFundacao.setBounds(26, 129, 127, 28);
+		contentPane.add(lblAnoDeFundacao);
 		
 		textFieldAno = new JTextField();
 		textFieldAno.setBounds(26, 159, 216, 20);
