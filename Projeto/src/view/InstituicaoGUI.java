@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class InstituicaoGUI extends JFrame {
 
@@ -21,6 +22,7 @@ public class InstituicaoGUI extends JFrame {
 	private JLabel lblNome;
 	private JLabel lblAnoDeFundacao;
 	private JLabel lblTipo;
+	private JComboBox comboBoxTipo;
 	/**
 	 * Launch the application.
 	 */
@@ -84,8 +86,11 @@ public class InstituicaoGUI extends JFrame {
 		lblTipo.setBounds(26, 190, 59, 20);
 		contentPane.add(lblTipo);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(26, 221, 216, 22);
-		contentPane.add(comboBox);
+		comboBoxTipo = new JComboBox();
+		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Educação Infantil", "Ensino Fundamental", "Ensino Médio", "Educação Infantil e Ensino Fundamental", "Educação Infantil, Ensino Fundamental e Ensino Médio", "Ensino Superior"}));
+		comboBoxTipo.setFont(new Font("Calibri", Font.PLAIN, 17));
+		comboBoxTipo.setBounds(26, 223, 216, 28);
+		
+		contentPane.add(comboBoxTipo);
 	}
 }
