@@ -100,22 +100,11 @@ public class InstituicaoGUI extends JFrame {
 		
 		btnEnviar = new JButton("Enviar");
 		btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
-		btnEnviar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
 		btnEnviar.setBounds(26, 262, 89, 23);
 		contentPane.add(btnEnviar);
 		
 		JButton btnlimpar = new JButton("Limpar");
 		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
-		btnlimpar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				//textFieldNome.
-				
-			}
-		});
 		btnlimpar.setBounds(153, 262, 89, 23);
 		contentPane.add(btnlimpar);
 	}
