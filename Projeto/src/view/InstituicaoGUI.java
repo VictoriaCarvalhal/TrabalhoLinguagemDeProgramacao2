@@ -10,6 +10,9 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InstituicaoGUI extends JFrame {
 
@@ -23,6 +26,8 @@ public class InstituicaoGUI extends JFrame {
 	private JLabel lblAnoDeFundacao;
 	private JLabel lblTipo;
 	private JComboBox comboBoxTipo;
+	private JButton btnEnviar;
+	private JButton btnlimpar; 
 	/**
 	 * Launch the application.
 	 */
@@ -92,5 +97,23 @@ public class InstituicaoGUI extends JFrame {
 		comboBoxTipo.setBounds(26, 223, 216, 28);
 		
 		contentPane.add(comboBoxTipo);
+		
+		btnEnviar = new JButton("Enviar");
+		btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
+		btnEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnEnviar.setBounds(36, 262, 89, 23);
+		contentPane.add(btnEnviar);
+		
+		btnlimpar = new JButton("Limpar");
+		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
+		btnlimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnlimpar.setBounds(153, 262, 89, 23);
+		contentPane.add(btnlimpar);
 	}
 }
