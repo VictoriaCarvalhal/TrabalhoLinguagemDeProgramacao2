@@ -76,3 +76,4 @@ public class LoginGUI extends JFrame {
         JOptionPane.showMessageDialog(this, "Campos limpos!", "Informação", JOptionPane.INFORMATION_MESSAGE);
     }
 }
+
