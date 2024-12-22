@@ -41,7 +41,7 @@ public class LoginGUI extends JFrame {
         contentPane.add(textFieldLogin);
         textFieldLogin.setColumns(10);
 
-        textFieldSenha = new JPasswordField(); // Uso de JPasswordField para segurança
+        textFieldSenha = new JPasswordField(); // Uso de JPasswordField para seguranï¿½a
         textFieldSenha.setBounds(23, 94, 159, 20);
         contentPane.add(textFieldSenha);
         textFieldSenha.setColumns(10);
@@ -73,7 +73,7 @@ public class LoginGUI extends JFrame {
     public void limparCampos() {
         textFieldLogin.setText("");
         textFieldSenha.setText("");
-        JOptionPane.showMessageDialog(this, "Campos limpos!", "Informação", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Campos limpos!", "Informacao", JOptionPane.INFORMATION_MESSAGE);
     }
 }
 

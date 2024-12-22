@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -19,6 +21,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTable;
 
 public class InstituicaoGUI extends JFrame {
 
@@ -36,7 +39,7 @@ public class InstituicaoGUI extends JFrame {
 	private JButton btnlimpar; 
 	
 	/**
-	 * inicializa a janela.
+	 * inicializa a janela;
 	 */
 	
 	public static void main(String[] args) {
@@ -58,7 +61,7 @@ public class InstituicaoGUI extends JFrame {
 	
 	public InstituicaoGUI() {
 		setTitle("Cadastro de Instituicoes de Ensino\r\n");
-		setBounds(100, 100, 337, 415);
+		setBounds(100, 100, 337, 380);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
@@ -143,6 +146,12 @@ public class InstituicaoGUI extends JFrame {
 		 */
 		
 		btnEnviar = new JButton("Enviar");
+		btnEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
 		btnEnviar.setBounds(26, 262, 89, 23);
 		btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		contentPane.add(btnEnviar);
@@ -154,7 +163,7 @@ public class InstituicaoGUI extends JFrame {
 		JButton btnlimpar = new JButton("Limpar");
 		btnlimpar.setBounds(153, 262, 89, 23);
 		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
-		contentPane.add(btnlimpar);	
+		contentPane.add(btnlimpar);
 	}
 	
 	public void adicionarOuvinteInstituicao(ActionListener ouvinte) {
@@ -183,6 +192,14 @@ public class InstituicaoGUI extends JFrame {
 
 	public String getTextFieldAno() {
 		return textFieldAno.getText();
+	}
+	
+	public void limparCampos() {
+		
+		textFieldCod.setText("");
+		textFieldNome.setText("");
+		textFieldAno.setText("");
+		JOptionPane.showMessageDialog(null, "Campos limpos!", "Informacao!", JOptionPane.INFORMATION_MESSAGE);
 	}
 	
 }
