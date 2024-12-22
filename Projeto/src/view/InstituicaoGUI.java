@@ -57,27 +57,21 @@ public class InstituicaoGUI extends JFrame {
 	 */
 	
 	public InstituicaoGUI() {
-		
-		/**
-		 * Adicionando tamanho, nome e limites da janela;
-		 */
-		
-		setTitle("Cadastro de Institiucao de Ensino");
-		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setTitle("Cadastro de Instituicoes de Ensino\r\n");
 		setBounds(100, 100, 337, 415);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		/**
 		 * adiciona o texto para o código;
 		 */
+		contentPane.setLayout(null);
 		
 		lblCodMec = new JLabel("Codigo do MEC");
-		lblCodMec.setFont(new Font("Calibri", Font.PLAIN, 17));
 		lblCodMec.setBounds(26, 11, 113, 28);
+		lblCodMec.setFont(new Font("Calibri", Font.PLAIN, 17));
 		contentPane.add(lblCodMec);
 		
 		/**
@@ -94,8 +88,8 @@ public class InstituicaoGUI extends JFrame {
 		 */
 		
 		lblNome = new JLabel("Nome\r\n");
-		lblNome.setFont(new Font("Calibri", Font.PLAIN, 17));
 		lblNome.setBounds(26, 69, 93, 28);
+		lblNome.setFont(new Font("Calibri", Font.PLAIN, 17));
 		contentPane.add(lblNome);
 		
 		/**
@@ -112,8 +106,8 @@ public class InstituicaoGUI extends JFrame {
 		 */
 		
 		lblAnoDeFundacao = new JLabel("Ano de Fundacao");
-		lblAnoDeFundacao.setFont(new Font("Calibri", Font.PLAIN, 17));
 		lblAnoDeFundacao.setBounds(26, 129, 127, 28);
+		lblAnoDeFundacao.setFont(new Font("Calibri", Font.PLAIN, 17));
 		contentPane.add(lblAnoDeFundacao);
 		
 		/**
@@ -130,8 +124,8 @@ public class InstituicaoGUI extends JFrame {
 		 */
 		
 		lblTipo = new JLabel("Tipo:");
-		lblTipo.setFont(new Font("Calibri", Font.PLAIN, 17));
 		lblTipo.setBounds(26, 190, 59, 20);
+		lblTipo.setFont(new Font("Calibri", Font.PLAIN, 17));
 		contentPane.add(lblTipo);
 		
 		/**
@@ -139,9 +133,9 @@ public class InstituicaoGUI extends JFrame {
 		 */
 		
 		comboBoxTipo = new JComboBox();
+		comboBoxTipo.setBounds(26, 223, 216, 28);
 		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Educação Infantil", "Ensino Fundamental", "Ensino Médio", "Educação Infantil e Ensino Fundamental", "Educação Infantil, Ensino Fundamental e Ensino Médio", "Ensino Superior"}));
 		comboBoxTipo.setFont(new Font("Calibri", Font.PLAIN, 10));
-		comboBoxTipo.setBounds(26, 223, 216, 28);
 		contentPane.add(comboBoxTipo);
 		
 		/**
@@ -149,8 +143,8 @@ public class InstituicaoGUI extends JFrame {
 		 */
 		
 		btnEnviar = new JButton("Enviar");
-		btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		btnEnviar.setBounds(26, 262, 89, 23);
+		btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		contentPane.add(btnEnviar);
 		
 		/**
@@ -158,13 +152,37 @@ public class InstituicaoGUI extends JFrame {
 		 */
 		
 		JButton btnlimpar = new JButton("Limpar");
-		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		btnlimpar.setBounds(153, 262, 89, 23);
-		contentPane.add(btnlimpar);
-		
-		
+		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
+		contentPane.add(btnlimpar);	
 	}
+	
 	public void adicionarOuvinteInstituicao(ActionListener ouvinte) {
 		
+		btnEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				btnEnviar.setActionCommand("ENVIAR");				
+			}
+		});
+		
+		btnlimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				btnlimpar.setActionCommand("LIMPAR");
+			}
+		});	
+
 	}
+
+	public String getTextFieldCod() {
+		return textFieldCod.getText();
+	}
+
+	public String getTextFieldNome() {
+		return textFieldNome.getText();
+	}
+
+	public String getTextFieldAno() {
+		return textFieldAno.getText();
+	}
+	
 }

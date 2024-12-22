@@ -22,6 +22,7 @@ public class ControllerInstituicaoGUI {
 			Instituicao instituicao = new Instituicao(codigoDoMec, nome, tipo, login, senha, anoDeFundacao);
 			
 			return true;
+			
 		}else {
 			return false;
 		}
