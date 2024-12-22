@@ -19,12 +19,14 @@ public class ControllerInstituicaoGUI {
 	
 	public boolean cadastraInstituicao(String codigoDoMec, String nome, String tipo, String login, String senha, int anoDeFundacao) {
 		if (codigoDoMec != null && codigoDoMec.length() > 0 && nome != null && nome.length() > 0 && tipo != null && tipo.length() > 0 && login != null && login.length() > 0 && senha != null && senha.length() > 0 && anoDeFundacao != 0) {
-			Instituicao instituicao = new Instituicao(codigoDoMec, nome, tipo, login, senha, anoDeFundacao);
+			Instituicao instituicao = new Instituicao(codigoDoMec, nome, tipo, anoDeFundacao);
 			
 			return true;
 			
 		}else {
+			
 			return false;
+			
 		}
 	}
 	
