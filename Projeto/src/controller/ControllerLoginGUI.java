@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import view.LoginGUI;
-import modelo.Instituicao;
+import modelo.Login;
 
 public class ControllerLoginGUI {
 	private LoginGUI lGUI;
@@ -20,6 +20,12 @@ public class ControllerLoginGUI {
 			if(e.getActionCommand() == "ENVIAR"){
 				 String login = lGUI.getLogin();
 	             String senha = lGUI.getSenha();
+	             if(senha.isEmpty()||login.isEmpty()){
+	            	 JOptionPane.showMessageDialog(null,"Mensagem","Titulo",JOptionPane.WARNING_MESSAGE);
+	             }
+	             else {
+	            	 Login Login1 = new Login(login,senha);
+	             }
 			}
 			else {
 				if(e.getActionCommand() == "LIMPAR"){
