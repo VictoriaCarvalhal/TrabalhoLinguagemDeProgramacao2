@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import view.LoginGUI;
+import modelo.Instituicao;
 
 public class ControllerLoginGUI {
 	private LoginGUI lGUI;
@@ -16,8 +17,14 @@ public class ControllerLoginGUI {
 	class OuvinteLogin implements ActionListener{
 		@Override 
 		public void actionPerformed(ActionEvent e) {
-			if(e.getActionCommand() == ""){
-				
+			if(e.getActionCommand() == "ENVIAR"){
+				 String login = lGUI.getLogin();
+	             String senha = lGUI.getSenha();
+			}
+			else {
+				if(e.getActionCommand() == "LIMPAR"){
+					lGUI.limparCampos();
+				}
 			}
 		}
 		
