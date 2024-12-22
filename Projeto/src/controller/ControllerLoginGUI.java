@@ -7,10 +7,19 @@ import javax.swing.JOptionPane;
 import view.LoginGUI;
 
 public class ControllerLoginGUI {
-	private LoginGUI pGUI;
+	private LoginGUI lGUI;
 	public ControllerLoginGUI() {
-		pGUI = new LoginGUI();
+		lGUI = new LoginGUI();
+		lGUI.adicionarOuvinteLogin(new OuvinteLogin());
 	}
 	
-	
+	class OuvinteLogin implements ActionListener{
+		@Override 
+		public void actionPerformed(ActionEvent e) {
+			if(e.getActionCommand() == ""){
+				
+			}
+		}
+		
+	}
 }

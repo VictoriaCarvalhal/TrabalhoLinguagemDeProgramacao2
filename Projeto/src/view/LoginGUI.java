@@ -8,6 +8,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -80,5 +82,9 @@ public class LoginGUI extends JFrame {
 		btnEntrar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		btnEntrar.setBounds(173, 143, 134, 38);
 		contentPane.add(btnEntrar);
+	}
+	
+	public void adicionarOuvinteLogin(ActionListener ouvinte) {
+		
 	}
 }
