@@ -21,7 +21,7 @@ public class ControllerLoginGUI {
 				 String login = lGUI.getLogin();
 	             String senha = lGUI.getSenha();
 	             if(senha.isEmpty()||login.isEmpty()){
-	            	 JOptionPane.showMessageDialog(null,"Mensagem","Titulo",JOptionPane.WARNING_MESSAGE);
+	            	 JOptionPane.showMessageDialog(null,"Preencha Todos os Campos","Impossivel Continuar",2);
 	             }
 	             else {
 	            	 Login Login1 = new Login(login,senha);

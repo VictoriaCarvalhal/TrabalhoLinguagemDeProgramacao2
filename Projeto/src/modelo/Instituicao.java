@@ -1,15 +1,13 @@
 package modelo;
 
 public class Instituicao {
-	private String codigoDoMec, nome, tipo, login, senha;
+	private String codigoDoMec, nome, tipo;
 	private int anoDeFundacao;
 	
-	public Instituicao(String codigoDoMec, String nome, String tipo, String login, String senha, int anoDeFundacao) {
+	public Instituicao(String codigoDoMec, String nome, String tipo, int anoDeFundacao) {
 		this.codigoDoMec = codigoDoMec;
 		this.nome = nome;
 		this.tipo = tipo;
-		this.login = login;
-		this.senha = senha;
 		this.anoDeFundacao = anoDeFundacao;
 	}
 	
