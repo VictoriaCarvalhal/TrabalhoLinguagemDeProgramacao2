@@ -7,5 +7,12 @@ import javax.swing.JOptionPane;
 import view.LoginGUI;
 
 public class ControllerLoginGUI {
+	private LoginGUI pGUI;
+	
+	public ControllerLoginGUI() {
+		pGUI = new LoginGUI();
+		
+	}
+	
 	
 }
