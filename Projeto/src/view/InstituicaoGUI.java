@@ -56,7 +56,7 @@ public class InstituicaoGUI extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		lblCodMec = new JLabel("Código do MEC");
+		lblCodMec = new JLabel("Codigo do MEC");
 		lblCodMec.setFont(new Font("Calibri", Font.PLAIN, 17));
 		lblCodMec.setBounds(26, 11, 113, 28);
 		contentPane.add(lblCodMec);
@@ -76,7 +76,7 @@ public class InstituicaoGUI extends JFrame {
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
 		
-		lblAnoDeFundacao = new JLabel("Ano de Fundação");
+		lblAnoDeFundacao = new JLabel("Ano de Fundacao");
 		lblAnoDeFundacao.setFont(new Font("Calibri", Font.PLAIN, 17));
 		lblAnoDeFundacao.setBounds(26, 129, 127, 28);
 		contentPane.add(lblAnoDeFundacao);
@@ -93,7 +93,7 @@ public class InstituicaoGUI extends JFrame {
 		
 		comboBoxTipo = new JComboBox();
 		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Educação Infantil", "Ensino Fundamental", "Ensino Médio", "Educação Infantil e Ensino Fundamental", "Educação Infantil, Ensino Fundamental e Ensino Médio", "Ensino Superior"}));
-		comboBoxTipo.setFont(new Font("Calibri", Font.PLAIN, 17));
+		comboBoxTipo.setFont(new Font("Calibri", Font.PLAIN, 10));
 		comboBoxTipo.setBounds(26, 223, 216, 28);
 		
 		contentPane.add(comboBoxTipo);
@@ -104,13 +104,16 @@ public class InstituicaoGUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnEnviar.setBounds(36, 262, 89, 23);
+		btnEnviar.setBounds(26, 262, 89, 23);
 		contentPane.add(btnEnviar);
 		
-		btnlimpar = new JButton("Limpar");
+		JButton btnlimpar = new JButton("Limpar");
 		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		btnlimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				//textFieldNome.
+				
 			}
 		});
 		btnlimpar.setBounds(153, 262, 89, 23);
