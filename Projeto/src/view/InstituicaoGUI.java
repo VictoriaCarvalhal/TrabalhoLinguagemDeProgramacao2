@@ -107,5 +107,10 @@ public class InstituicaoGUI extends JFrame {
 		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		btnlimpar.setBounds(153, 262, 89, 23);
 		contentPane.add(btnlimpar);
+		
+		
+	}
+	public void adicionarOuvinteInstituicao(ActionListener ouvinte) {
+		
 	}
 }
