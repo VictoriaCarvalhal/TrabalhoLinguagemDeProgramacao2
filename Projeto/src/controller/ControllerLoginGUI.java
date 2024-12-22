@@ -25,6 +25,7 @@ public class ControllerLoginGUI {
 	             }
 	             else {
 	            	 Login Login1 = new Login(login,senha);
+	            	 JOptionPane.showMessageDialog(null,"Login Feito Com Sucesso","",1);
 	             }
 			}
 			else {
