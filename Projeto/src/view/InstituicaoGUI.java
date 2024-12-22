@@ -135,11 +135,11 @@ public class InstituicaoGUI extends JFrame {
 		 * adiciona a caixa para os tipos de instituição;
 		 */
 		
-		comboBoxTipo = new JComboBox();
-		comboBoxTipo.setBounds(26, 223, 216, 28);
-		comboBoxTipo.setModel(new DefaultComboBoxModel(new String[] {"Educação Infantil", "Ensino Fundamental", "Ensino Médio", "Educação Infantil e Ensino Fundamental", "Educação Infantil, Ensino Fundamental e Ensino Médio", "Ensino Superior"}));
-		comboBoxTipo.setFont(new Font("Calibri", Font.PLAIN, 10));
-		contentPane.add(comboBoxTipo);
+		setComboBoxTipo(new JComboBox());
+		getComboBoxTipo().setBounds(26, 223, 216, 28);
+		getComboBoxTipo().setModel(new DefaultComboBoxModel(new String[] {"Educação Infantil", "Ensino Fundamental", "Ensino Médio", "Educação Infantil e Ensino Fundamental", "Educação Infantil, Ensino Fundamental e Ensino Médio", "Ensino Superior"}));
+		getComboBoxTipo().setFont(new Font("Calibri", Font.PLAIN, 10));
+		contentPane.add(getComboBoxTipo());
 		
 		/**
 		 * adiciona o botão para enviar;
@@ -194,12 +194,21 @@ public class InstituicaoGUI extends JFrame {
 		return textFieldAno.getText();
 	}
 	
+	
 	public void limparCampos() {
 		
 		textFieldCod.setText("");
 		textFieldNome.setText("");
 		textFieldAno.setText("");
 		JOptionPane.showMessageDialog(null, "Campos limpos!", "Informacao!", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public JComboBox getComboBoxTipo() {
+		return comboBoxTipo;
+	}
+
+	public void setComboBoxTipo(JComboBox comboBoxTipo) {
+		this.comboBoxTipo = comboBoxTipo;
 	}
 	
 }
