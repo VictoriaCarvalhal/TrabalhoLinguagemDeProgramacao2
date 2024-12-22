@@ -2,10 +2,12 @@ package controller;
 
 import modelo.Login;
 import view.LoginGUI;
+import view.InstituicaoGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 public class ControllerLoginGUI {
 
@@ -40,6 +42,11 @@ public class ControllerLoginGUI {
                 } else {
                     Login loginModel = new Login(login, senha);
                     JOptionPane.showMessageDialog(null, "Login feito com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                    
+                    InstituicaoGUI instituicaoGUI = new InstituicaoGUI();
+                    instituicaoGUI.setVisible(true);
+                    
+                    lGUI.dispose();
                 }
             }
         }
