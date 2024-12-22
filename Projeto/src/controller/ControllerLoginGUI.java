@@ -11,8 +11,6 @@ public class ControllerLoginGUI {
 	
 	public ControllerLoginGUI() {
 		pGUI = new LoginGUI();
-		
 	}
-	
 	
 }
