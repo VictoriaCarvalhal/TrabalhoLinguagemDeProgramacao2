@@ -11,6 +11,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -22,6 +23,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTable;
+import javax.swing.JScrollBar;
+import javax.swing.ListSelectionModel;
 
 public class InstituicaoGUI extends JFrame {
 
@@ -37,7 +40,9 @@ public class InstituicaoGUI extends JFrame {
 	private JComboBox comboBoxTipo;
 	private JButton btnEnviar;
 	private JButton btnlimpar; 
-	
+	private JTable tabela;
+	private JScrollBar scrollBar;
+	private DefaultTableModel tabletabela;
 	/**
 	 * inicializa a janela;
 	 */
@@ -61,13 +66,13 @@ public class InstituicaoGUI extends JFrame {
 	
 	public InstituicaoGUI() {
 	    setTitle("Cadastro de Instituicoes de Ensino\r\n");
-	    setBounds(100, 100, 337, 380);
+	    setBounds(100, 100, 337, 509);
 	    contentPane = new JPanel();
 	    contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	    setContentPane(contentPane);
 
 	    /**
-	     * adiciona o texto para o código;
+	     * adiciona o texto para o cï¿½digo;
 	     */
 	    contentPane.setLayout(null);
 
@@ -77,7 +82,7 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(lblCodMec);
 
 	    /**
-	     * adiciona o campo para código;
+	     * adiciona o campo para cï¿½digo;
 	     */
 	    textFieldCod = new JTextField();
 	    textFieldCod.setBounds(26, 38, 216, 20);
@@ -101,7 +106,7 @@ public class InstituicaoGUI extends JFrame {
 	    textFieldNome.setColumns(10);
 
 	    /**
-	     * adiciona o texto para o ano de fundação;
+	     * adiciona o texto para o ano de fundaï¿½ï¿½o;
 	     */
 	    lblAnoDeFundacao = new JLabel("Ano de Fundacao");
 	    lblAnoDeFundacao.setBounds(26, 129, 127, 28);
@@ -109,7 +114,7 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(lblAnoDeFundacao);
 
 	    /**
-	     * adiciona o campo para o ano de fundação;
+	     * adiciona o campo para o ano de fundaï¿½ï¿½o;
 	     */
 	    textFieldAno = new JTextField();
 	    textFieldAno.setBounds(26, 159, 216, 20);
@@ -117,7 +122,7 @@ public class InstituicaoGUI extends JFrame {
 	    textFieldAno.setColumns(10);
 
 	    /**
-	     * adiciona o texto para o tipo de instituição;
+	     * adiciona o texto para o tipo de instituiï¿½ï¿½o;
 	     */
 	    lblTipo = new JLabel("Tipo:");
 	    lblTipo.setBounds(26, 190, 59, 20);
@@ -125,25 +130,25 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(lblTipo);
 
 	    /**
-	     * adiciona a caixa para os tipos de instituição;
+	     * adiciona a caixa para os tipos de instituiï¿½ï¿½o;
 	     */
 	    setComboBoxTipo(new JComboBox());
 	    getComboBoxTipo().setBounds(26, 223, 216, 28);
 	    getComboBoxTipo().setModel(new DefaultComboBoxModel(new String[] {
-	        "Educação Infantil", "Ensino Fundamental", "Ensino Médio",
-	        "Educação Infantil e Ensino Fundamental", "Educação Infantil, Ensino Fundamental e Ensino Médio",
+	        "Educacao Infantil", "Ensino Fundamental", "Ensino Medio",
+	        "Educacao Infantil e Ensino Fundamental", "Educacao Infantil, Ensino Fundamental e Ensino Mï¿½dio",
 	        "Ensino Superior"
 	    }));
 	    getComboBoxTipo().setFont(new Font("Calibri", Font.PLAIN, 10));
 	    contentPane.add(getComboBoxTipo());
 
 	    /**
-	     * adiciona o botão para enviar;
+	     * adiciona o botï¿½o para enviar;
 	     */
 	    btnEnviar = new JButton("ENVIAR");
 	    btnEnviar.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
-	            // Lógica do botão ENVIAR
+	            // Lï¿½gica do botï¿½o ENVIAR
 	        }
 	    });
 	    btnEnviar.setBounds(26, 262, 89, 23);
@@ -151,12 +156,26 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(btnEnviar);
 
 	    /**
-	     * adiciona o botão para limpar;
+	     * adiciona o botï¿½o para limpar;
 	     */
 	    btnlimpar = new JButton("LIMPAR"); // Use o atributo da classe
 	    btnlimpar.setBounds(153, 262, 89, 23);
 	    btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(btnlimpar);
+	    
+	    tabela = new JTable();
+	    tabela.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+	    tabela.setFont(new Font("Calibri", Font.PLAIN, 11));
+	    tabela.setBounds(36, 297, 206, 162);
+	    contentPane.add(tabela);
+	    String[] titulo = {"nome", "codigo do MEC", "Ano de Fundacao", "tipo"};
+	    tabela.getColumn(titulo);
+	    
+	    scrollBar = new JScrollBar();
+	    scrollBar.setBounds(225, 296, 17, 48);
+	    contentPane.add(scrollBar);
+	    scrollBar.setVisible(false);
+	    
 	}
 
 	public void adicionarOuvinteInstituicao(ActionListener ouvinte) {
@@ -195,5 +214,13 @@ public class InstituicaoGUI extends JFrame {
 	public void setComboBoxTipo(JComboBox comboBoxTipo) {
 		this.comboBoxTipo = comboBoxTipo;
 	}
-	
+	 
+	public void definirColunas() {
+		tabletabela = new DefaultTableModel();
+		tab
+	}
 }
+
+
+
+
