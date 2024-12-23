@@ -1,4 +1,11 @@
+/**
+ * Classe controller para a interface do cadastro de instituicoes.
+ */
+
 package controller;
+/**
+ * Importacoes necessarias para o funcionamento da classe.
+ */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +17,13 @@ import view.InstituicaoGUI;
 
 public class ControllerInstituicaoGUI {
 	
+	
 	private InstituicaoGUI iGUI;
+	
+	/**
+	 * Metodo construtor do ControllerInstituicaoGUI;
+	 * Cria uma instancia da interface.
+	 */
 	
 	public ControllerInstituicaoGUI() {
 		iGUI = new InstituicaoGUI();
@@ -18,6 +31,17 @@ public class ControllerInstituicaoGUI {
 		iGUI.setVisible(true);
 	}
 	
+	/**
+	 * Metodo cadastraInstituicao;
+	 * Confere se os parametros inseridos sao validos ou nao;
+	 * Se forem validos, cria um objeto do tipo instituicao com os dados fornecidos e retorna true;
+	 * Se forem invalidos, retorna o aviso para preencher corretamente e retorna false.
+	 * @param codigoDoMec
+	 * @param nome
+	 * @param tipo
+	 * @param anoDeFundacao
+	 * @return 
+	 */
 	
 	public boolean cadastraInstituicao(String codigoDoMec, String nome, String tipo, int anoDeFundacao) {
 		if (codigoDoMec.isEmpty() || nome.isEmpty() || tipo.isEmpty() || anoDeFundacao<=0) {
@@ -30,16 +54,27 @@ public class ControllerInstituicaoGUI {
 		return true;
 		
 	}
+	
+	/**
+	 * Metodo getInstituicao;
+	 * Retorna o objeto Instituicao.
+	 * @return 
+	 */
 	public InstituicaoGUI getInstituicao() {
 		return iGUI;
 	}
-	
+	/**
+	 * Classe ouvinteInstituicao;
+	 * Configura os eventos dos botoes ENVIAR e LIMPAR da interface de cadastro;
+	 * Botao ENVIAR chama o metodo cadastraInstituicao e passa os dados inseridos na interface como parametro;
+	 * Botao LIMPAR limpa os dados inseridos na interface;
+	 * Try e Catch tratam erros que podem ocorrer ao inserir os dados.
+	 */
 	class ouvinteInstituicao implements ActionListener {
 	    public void actionPerformed(ActionEvent e) {
 	        String comando = e.getActionCommand();
 	        if (comando.equals("ENVIAR")) {
 	            try {
-	            	
 	                String codigoMec = iGUI.getTextFieldCod();
 	                String nomeInstituicao = iGUI.getTextFieldNome();
 	                String anoStr = iGUI.getTextFieldAno().trim();
@@ -60,5 +95,4 @@ public class ControllerInstituicaoGUI {
 	        }
 	    }
 	}
-
 }
