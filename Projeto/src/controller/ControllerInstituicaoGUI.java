@@ -7,10 +7,6 @@ import javax.swing.JOptionPane;
 import view.InstituicaoGUI;
 import modelo.Instituicao;
 
-
-
-
-
 public class ControllerInstituicaoGUI {
 	
 	private InstituicaoGUI iGUI;
@@ -28,7 +24,7 @@ public class ControllerInstituicaoGUI {
 			return false;
 		}
 		Instituicao instituicao = new Instituicao(codigoDoMec, nome, tipo, anoDeFundacao);
-		JOptionPane.showConfirmDialog(null, "Cadastrado com sucesso!");
+		JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 		return true;
 	}
 	public InstituicaoGUI getInstituicao() {
@@ -36,20 +32,28 @@ public class ControllerInstituicaoGUI {
 	}
 	
 	class ouvinteInstituicao implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			String comando = e.getActionCommand();
-			if (comando.equals("ENVIAR")) {
-				String codigoMec = iGUI.getTextFieldCod();	
-				String nomeInstituicao = iGUI.getTextFieldNome();
-				int anoDeFundacao = Integer.parseInt(iGUI.getTextFieldAno());
-				String tipo = (String) iGUI.getComboBoxTipo().getSelectedItem();
-				
-				if (!cadastraInstituicao(codigoMec, nomeInstituicao, tipo, anoDeFundacao)) {
-					JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
-				}
-			}else if(comando.equals("LIMPAR")) {
-				iGUI.limparCampos();
-			}
-		}
+	    public void actionPerformed(ActionEvent e) {
+	        String comando = e.getActionCommand();
+	        if (comando.equals("ENVIAR")) {
+	            try {
+	                String codigoMec = iGUI.getTextFieldCod();
+	                String nomeInstituicao = iGUI.getTextFieldNome();
+	                String anoStr = iGUI.getTextFieldAno().trim();
+	                String tipo = (String) iGUI.getComboBoxTipo().getSelectedItem();
+	                int anoDeFundacao = Integer.parseInt(anoStr);
+
+	                // Validações para o campo ano
+	                if (!cadastraInstituicao(codigoMec, nomeInstituicao, tipo, anoDeFundacao)) {
+	                    JOptionPane.showMessageDialog(null, "Preencha todos os campos corretamente!", "Erro", JOptionPane.ERROR_MESSAGE);
+	                }
+	                
+	            } catch (NumberFormatException ex) {
+	                JOptionPane.showMessageDialog(null, "O campo 'Ano de Fundação' deve conter apenas números!", "Erro", JOptionPane.ERROR_MESSAGE);
+	            }
+	        } else if (comando.equals("LIMPAR")) {
+	            iGUI.limparCampos();
+	        }
+	    }
 	}
+
 }

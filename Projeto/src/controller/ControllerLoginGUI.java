@@ -3,11 +3,11 @@ package controller;
 import modelo.Login;
 import view.LoginGUI;
 import view.InstituicaoGUI;
+import controller.ControllerInstituicaoGUI;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 public class ControllerLoginGUI {
 
@@ -36,15 +36,14 @@ public class ControllerLoginGUI {
             if (comando.equals("Entrar")) {
                 String login = lGUI.getLogin();
                 String senha = lGUI.getSenha();
-
+                Login Login = new Login(login,senha);
                 if (!camposPreenchidos(login, senha)) {
                     JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
                 } else {
                     Login loginModel = new Login(login, senha);
                     JOptionPane.showMessageDialog(null, "Login feito com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                     
-                    InstituicaoGUI instituicaoGUI = new InstituicaoGUI();
-                    instituicaoGUI.setVisible(true);
+                    new ControllerInstituicaoGUI();
                     
                     lGUI.dispose();
                 }

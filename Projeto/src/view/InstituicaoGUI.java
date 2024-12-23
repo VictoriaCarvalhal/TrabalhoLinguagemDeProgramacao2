@@ -60,113 +60,105 @@ public class InstituicaoGUI extends JFrame {
 	 */
 	
 	public InstituicaoGUI() {
-		setTitle("Cadastro de Instituicoes de Ensino\r\n");
-		setBounds(100, 100, 337, 380);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		
-		setContentPane(contentPane);
-		
-		/**
-		 * adiciona o texto para o c√≥digo;
-		 */
-		contentPane.setLayout(null);
-		
-		lblCodMec = new JLabel("Codigo do MEC");
-		lblCodMec.setBounds(26, 11, 113, 28);
-		lblCodMec.setFont(new Font("Calibri", Font.PLAIN, 17));
-		contentPane.add(lblCodMec);
-		
-		/**
-		 * adiciona o campo para c√≥digo;
-		 */
-		
-		textFieldCod = new JTextField();
-		textFieldCod.setBounds(26, 38, 216, 20);
-		contentPane.add(textFieldCod);
-		textFieldCod.setColumns(10);
-		
-		/**
-		 * adiciona o texto para nome;
-		 */
-		
-		lblNome = new JLabel("Nome\r\n");
-		lblNome.setBounds(26, 69, 93, 28);
-		lblNome.setFont(new Font("Calibri", Font.PLAIN, 17));
-		contentPane.add(lblNome);
-		
-		/**
-		 * adiciona o campo para nome;
-		 */
-		
-		textFieldNome = new JTextField();
-		textFieldNome.setBounds(26, 98, 216, 20);
-		contentPane.add(textFieldNome);
-		textFieldNome.setColumns(10);
-		
-		/**
-		 * adiciona o texto para o ano de funda√ß√£o;
-		 */
-		
-		lblAnoDeFundacao = new JLabel("Ano de Fundacao");
-		lblAnoDeFundacao.setBounds(26, 129, 127, 28);
-		lblAnoDeFundacao.setFont(new Font("Calibri", Font.PLAIN, 17));
-		contentPane.add(lblAnoDeFundacao);
-		
-		/**
-		 * adiciona o campo para o ano de funda√ß√£o;
-		 */
-		
-		textFieldAno = new JTextField();
-		textFieldAno.setBounds(26, 159, 216, 20);
-		contentPane.add(textFieldAno);
-		textFieldAno.setColumns(10);
-		
-		/**
-		 * adiciona o texto para o tipo de institui√ß√£o;
-		 */
-		
-		lblTipo = new JLabel("Tipo:");
-		lblTipo.setBounds(26, 190, 59, 20);
-		lblTipo.setFont(new Font("Calibri", Font.PLAIN, 17));
-		contentPane.add(lblTipo);
-		
-		/**
-		 * adiciona a caixa para os tipos de institui√ß√£o;
-		 */
-		
-		setComboBoxTipo(new JComboBox());
-		getComboBoxTipo().setBounds(26, 223, 216, 28);
-		getComboBoxTipo().setModel(new DefaultComboBoxModel(new String[] {"Educa√ß√£o Infantil", "Ensino Fundamental", "Ensino M√©dio", "Educa√ß√£o Infantil e Ensino Fundamental", "Educa√ß√£o Infantil, Ensino Fundamental e Ensino M√©dio", "Ensino Superior"}));
-		getComboBoxTipo().setFont(new Font("Calibri", Font.PLAIN, 10));
-		contentPane.add(getComboBoxTipo());
-		
-		/**
-		 * adiciona o bot√£o para enviar;
-		 */
-		
-		btnEnviar = new JButton("ENVIAR");
-		btnEnviar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				
-			}
-		});
-		btnEnviar.setBounds(26, 262, 89, 23);
-		btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
-		contentPane.add(btnEnviar);
-		
-		/**
-		 * adiciona o bot√£o para limpar;
-		 */
-		
-		JButton btnlimpar = new JButton("LIMPAR");
-		btnlimpar.setBounds(153, 262, 89, 23);
-		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
-		contentPane.add(btnlimpar);
+	    setTitle("Cadastro de Instituicoes de Ensino\r\n");
+	    setBounds(100, 100, 337, 380);
+	    contentPane = new JPanel();
+	    contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	    setContentPane(contentPane);
+
+	    /**
+	     * adiciona o texto para o cÛdigo;
+	     */
+	    contentPane.setLayout(null);
+
+	    lblCodMec = new JLabel("Codigo do MEC");
+	    lblCodMec.setBounds(26, 11, 113, 28);
+	    lblCodMec.setFont(new Font("Calibri", Font.PLAIN, 17));
+	    contentPane.add(lblCodMec);
+
+	    /**
+	     * adiciona o campo para cÛdigo;
+	     */
+	    textFieldCod = new JTextField();
+	    textFieldCod.setBounds(26, 38, 216, 20);
+	    contentPane.add(textFieldCod);
+	    textFieldCod.setColumns(10);
+
+	    /**
+	     * adiciona o texto para nome;
+	     */
+	    lblNome = new JLabel("Nome\r\n");
+	    lblNome.setBounds(26, 69, 93, 28);
+	    lblNome.setFont(new Font("Calibri", Font.PLAIN, 17));
+	    contentPane.add(lblNome);
+
+	    /**
+	     * adiciona o campo para nome;
+	     */
+	    textFieldNome = new JTextField();
+	    textFieldNome.setBounds(26, 98, 216, 20);
+	    contentPane.add(textFieldNome);
+	    textFieldNome.setColumns(10);
+
+	    /**
+	     * adiciona o texto para o ano de fundaÁ„o;
+	     */
+	    lblAnoDeFundacao = new JLabel("Ano de Fundacao");
+	    lblAnoDeFundacao.setBounds(26, 129, 127, 28);
+	    lblAnoDeFundacao.setFont(new Font("Calibri", Font.PLAIN, 17));
+	    contentPane.add(lblAnoDeFundacao);
+
+	    /**
+	     * adiciona o campo para o ano de fundaÁ„o;
+	     */
+	    textFieldAno = new JTextField();
+	    textFieldAno.setBounds(26, 159, 216, 20);
+	    contentPane.add(textFieldAno);
+	    textFieldAno.setColumns(10);
+
+	    /**
+	     * adiciona o texto para o tipo de instituiÁ„o;
+	     */
+	    lblTipo = new JLabel("Tipo:");
+	    lblTipo.setBounds(26, 190, 59, 20);
+	    lblTipo.setFont(new Font("Calibri", Font.PLAIN, 17));
+	    contentPane.add(lblTipo);
+
+	    /**
+	     * adiciona a caixa para os tipos de instituiÁ„o;
+	     */
+	    setComboBoxTipo(new JComboBox());
+	    getComboBoxTipo().setBounds(26, 223, 216, 28);
+	    getComboBoxTipo().setModel(new DefaultComboBoxModel(new String[] {
+	        "EducaÁ„o Infantil", "Ensino Fundamental", "Ensino MÈdio",
+	        "EducaÁ„o Infantil e Ensino Fundamental", "EducaÁ„o Infantil, Ensino Fundamental e Ensino MÈdio",
+	        "Ensino Superior"
+	    }));
+	    getComboBoxTipo().setFont(new Font("Calibri", Font.PLAIN, 10));
+	    contentPane.add(getComboBoxTipo());
+
+	    /**
+	     * adiciona o bot„o para enviar;
+	     */
+	    btnEnviar = new JButton("ENVIAR");
+	    btnEnviar.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
+	            // LÛgica do bot„o ENVIAR
+	        }
+	    });
+	    btnEnviar.setBounds(26, 262, 89, 23);
+	    btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
+	    contentPane.add(btnEnviar);
+
+	    /**
+	     * adiciona o bot„o para limpar;
+	     */
+	    btnlimpar = new JButton("LIMPAR"); // Use o atributo da classe
+	    btnlimpar.setBounds(153, 262, 89, 23);
+	    btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
+	    contentPane.add(btnlimpar);
 	}
-	
-		
+
 	public void adicionarOuvinteInstituicao(ActionListener ouvinte) {
 		btnEnviar.setActionCommand("ENVIAR");
 		btnEnviar.addActionListener(ouvinte);
