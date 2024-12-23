@@ -6,10 +6,6 @@
 
 package view;
 
-/**
- * Importacoes de pacotes e classes necessa
- */
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -48,7 +44,6 @@ public class InstituicaoGUI extends JFrame {
 	private JTable tabela;
 	private DefaultTableModel tabletabela;
 	private JScrollPane scrollPane;
-	
 	/**
 	 * inicializa a janela;
 	 */
@@ -71,63 +66,73 @@ public class InstituicaoGUI extends JFrame {
 	 */
 	
 	public InstituicaoGUI() {
+		 /**
+	     * Seta a tela, seu titulo e todos os seus atributos importantes
+	     */
 	    setTitle("Cadastro de Instituicoes de Ensino\r\n");
 	    setBounds(100, 100, 337, 509);
 	    contentPane = new JPanel();
 	    contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 	    setContentPane(contentPane);
+	    
+	    contentPane.setLayout(null);
 
 	    /**
-	     * adiciona o texto para o codigo;
+	     * Cria o texto do codigo do mec na tela e seta todos os atributos dele 
 	     */
-	    contentPane.setLayout(null);
+	    
 	    lblCodMec = new JLabel("Codigo do MEC");
 	    lblCodMec.setBounds(26, 11, 113, 28);
 	    lblCodMec.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(lblCodMec);
 
 	    /**
-	     * adiciona o campo para codigo;
+	     * Cria a caixa de texto do codigo do mec e seta todos os atributos importantes
 	     */
+	    
 	    textFieldCod = new JTextField();
 	    textFieldCod.setBounds(26, 38, 216, 20);
 	    contentPane.add(textFieldCod);
 	    textFieldCod.setColumns(10);
 
 	    /**
-	     * adiciona o texto para nome;
+	     * Cria o texto do nome na tela e define todos os atributos dele
 	     */
+	    
 	    lblNome = new JLabel("Nome\r\n");
 	    lblNome.setBounds(26, 69, 93, 28);
 	    lblNome.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(lblNome);
 
 	    /**
-	     * adiciona o campo para nome;
+	     * Cria a caixa de texto para o nome da institucao e define todos os atributos dele
 	     */
+	    
 	    textFieldNome = new JTextField();
 	    textFieldNome.setBounds(26, 98, 216, 20);
 	    contentPane.add(textFieldNome);
 	    textFieldNome.setColumns(10);
 
 	    /**
-	     * adiciona o texto para o ano de fundacao;
+	     * Cria o texto do ano de fundacao na tela e define todos os atributos dele
 	     */
+	    
 	    lblAnoDeFundacao = new JLabel("Ano de Fundacao");
 	    lblAnoDeFundacao.setBounds(26, 129, 127, 28);
 	    lblAnoDeFundacao.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(lblAnoDeFundacao);
 
 	    /**
-	     * adiciona o campo para o ano de fundacao;
+	     * Cria a caida de texto do ano de funcacao na tela e define todos os atributos dele
 	     */
+	    
 	    textFieldAno = new JTextField();
 	    textFieldAno.setBounds(26, 159, 216, 20);
 	    contentPane.add(textFieldAno);
 	    textFieldAno.setColumns(10);
 
 	    /**
-	     * adiciona o texto para o tipo de instituicao;
+	     * Cria o texto dos tipos na tela e define seus atibutos
 	     */
 	    
 	    lblTipo = new JLabel("Tipo:");
@@ -136,7 +141,7 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(lblTipo);
 
 	    /**
-	     * adiciona a caixa para os tipos de instituicao;
+	     * Cria a combobox dos tipos da instituicao de ensino e define seus atributos
 	     */
 	    
 	    setComboBoxTipo(new JComboBox());
@@ -150,25 +155,26 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(getComboBoxTipo());
 
 	    /**
-	     * adiciona o botï¿½o para enviar;
+	     * Cria o botão para enviar na tela e define seus atributos
 	     */
+	    
 	    btnEnviar = new JButton("ENVIAR");
-	    btnEnviar.addActionListener(new ActionListener() {
-	        public void actionPerformed(ActionEvent e) {
-	            // Lï¿½gica do botao ENVIAR
-	        }
-	    });
 	    btnEnviar.setBounds(26, 262, 89, 23);
 	    btnEnviar.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(btnEnviar);
 
 	    /**
-	     * adiciona o botao para limpar;
+	     * Cria o botão de limpar na tela e define seus atributos
 	     */
-	    btnlimpar = new JButton("LIMPAR"); // Use o atributo da classe
+	    
+	    btnlimpar = new JButton("LIMPAR");
 	    btnlimpar.setBounds(153, 262, 89, 23);
 	    btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(btnlimpar);
+	    
+	    /**
+	     * Cria a tabela na tela e define seus atributos
+	     */
 	    
 	    definirColunas();
 	    String[] titulo = {"nome", "codigo do MEC", "Ano de Fundacao", "tipo"};
@@ -178,12 +184,22 @@ public class InstituicaoGUI extends JFrame {
 	    tabela.setBounds(36, 297, 206, 162);
 	    contentPane.add(tabela);
 	    
+	    /**
+	     * Cria a barra de descer e subir e define seus atributos
+	     */
+	    
 	    scrollPane = new JScrollPane(tabela);
 	    scrollPane.setBounds(26, 296, 216, 163);
 	    contentPane.add(scrollPane);
 	    
+	    
 	}
 
+	/**
+     * Metodo que cria os ouvites para os eventos. 
+     * Esse é o metodo responsavel por disparar os eventos ao clicarem nos botões
+     */
+	
 	public void adicionarOuvinteInstituicao(ActionListener ouvinte) {
 		btnEnviar.setActionCommand("ENVIAR");
 		btnEnviar.addActionListener(ouvinte);
@@ -192,18 +208,32 @@ public class InstituicaoGUI extends JFrame {
 		btnlimpar.addActionListener(ouvinte);
 	}
 
+	/**
+     * Metodo que pega o texto de dentro das caixas de texto do codigo
+     */
 	public String getTextFieldCod() {
 		return textFieldCod.getText();
 	}
 
+	/**
+     * Metodo que pega o texto de dentro das caixas de texto do nome 
+     */
+	
 	public String getTextFieldNome() {
 		return textFieldNome.getText();
 	}
 
+	/**
+     * Metodo que pega o texto de dentro das caixas de texto do ano
+     */
+	
 	public String getTextFieldAno() {
 		return textFieldAno.getText();
 	}
 	
+	/**
+     * Metodo que limpa todas as caixas de texto
+     */
 	
 	public void limparCampos() {
 		
@@ -213,14 +243,24 @@ public class InstituicaoGUI extends JFrame {
 		JOptionPane.showMessageDialog(null, "Campos limpos!", "Informacao!", JOptionPane.INFORMATION_MESSAGE);
 	}
 
+	/**
+     * Metodo que pega o tipo selecionado na Combox
+     */
 	public JComboBox getComboBoxTipo() {
 		return comboBoxTipo;
 	}
 
+	/**
+     * Metodo que define o tipo da combox
+     */
 	public void setComboBoxTipo(JComboBox comboBoxTipo) {
 		this.comboBoxTipo = comboBoxTipo;
 	}
 	 
+	/**
+     * Metodo que cria as colunas da tabela
+     */
+	
 	public void definirColunas() {
 		
 		tabletabela = new DefaultTableModel();
@@ -230,6 +270,10 @@ public class InstituicaoGUI extends JFrame {
 		tabletabela.addColumn("tipo");
 		
 	}
+	
+	/**
+     * Metodo que coloca as informacoes escritas pelos usuarios dentro da tabela
+     */
 	
 	public void adicionarInfo(String nome, String codigoDoMec, int anoDeFundacao, String tipo) {
 		String AnDFund = Integer.toString(anoDeFundacao);
@@ -241,7 +285,4 @@ public class InstituicaoGUI extends JFrame {
 	}
 	
 }
-
-
-
 
