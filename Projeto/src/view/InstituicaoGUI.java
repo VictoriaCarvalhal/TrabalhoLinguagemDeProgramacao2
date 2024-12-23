@@ -25,6 +25,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JTable;
 import javax.swing.JScrollBar;
 import javax.swing.ListSelectionModel;
+import javax.swing.JScrollPane;
 
 public class InstituicaoGUI extends JFrame {
 
@@ -41,8 +42,8 @@ public class InstituicaoGUI extends JFrame {
 	private JButton btnEnviar;
 	private JButton btnlimpar; 
 	private JTable tabela;
-	private JScrollBar scrollBar;
 	private DefaultTableModel tabletabela;
+	private JTable table;
 	/**
 	 * inicializa a janela;
 	 */
@@ -163,12 +164,16 @@ public class InstituicaoGUI extends JFrame {
 	    btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(btnlimpar);
 	    
+	    String[] titulo = {"nome", "codigo do MEC", "Ano de Fundacao", "tipo"};
+		tabela = new JTable();
+	    tabela.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+	    tabela.setFont(new Font("Calibri", Font.PLAIN, 11));
+	    tabela.setBounds(36, 297, 206, 162);
+	    contentPane.add(tabela);
 	    
-	    
-	    scrollBar = new JScrollBar();
-	    scrollBar.setBounds(225, 296, 17, 48);
-	    contentPane.add(scrollBar);
-	    scrollBar.setVisible(false);
+	    JScrollPane scrollPane = new JScrollPane();
+	    scrollPane.setBounds(216, 296, 26, 136);
+	    contentPane.add(scrollPane);
 	    
 	}
 
@@ -211,16 +216,6 @@ public class InstituicaoGUI extends JFrame {
 	 
 	public void definirColunas() {
 		tabletabela = new DefaultTableModel();
-	}
-	
-	public void definirJTable() {
-		String[] titulo = {"nome", "codigo do MEC", "Ano de Fundacao", "tipo"};
-		tabletabela = new DefaultTableModel(null, titulo);
-	    tabela.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-	    tabela.setFont(new Font("Calibri", Font.PLAIN, 11));
-	    tabela.setBounds(36, 297, 206, 162);
-	    contentPane.add(tabela);
-	    
 	}
 }
 
