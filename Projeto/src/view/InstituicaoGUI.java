@@ -145,7 +145,7 @@ public class InstituicaoGUI extends JFrame {
 		 * adiciona o botão para enviar;
 		 */
 		
-		btnEnviar = new JButton("Enviar");
+		btnEnviar = new JButton("ENVIAR");
 		btnEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -160,26 +160,19 @@ public class InstituicaoGUI extends JFrame {
 		 * adiciona o botão para limpar;
 		 */
 		
-		JButton btnlimpar = new JButton("Limpar");
+		JButton btnlimpar = new JButton("LIMPAR");
 		btnlimpar.setBounds(153, 262, 89, 23);
 		btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 		contentPane.add(btnlimpar);
 	}
 	
+		
 	public void adicionarOuvinteInstituicao(ActionListener ouvinte) {
-		
-		btnEnviar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				btnEnviar.setActionCommand("ENVIAR");				
-			}
-		});
-		
-		btnlimpar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				btnlimpar.setActionCommand("LIMPAR");
-			}
-		});	
+		btnEnviar.setActionCommand("ENVIAR");
+		btnEnviar.addActionListener(ouvinte);
 
+		btnlimpar.setActionCommand("LIMPAR");
+		btnlimpar.addActionListener(ouvinte);
 	}
 
 	public String getTextFieldCod() {

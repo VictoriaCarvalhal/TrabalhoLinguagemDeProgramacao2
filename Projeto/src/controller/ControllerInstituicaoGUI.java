@@ -7,12 +7,18 @@ import javax.swing.JOptionPane;
 import view.InstituicaoGUI;
 import modelo.Instituicao;
 
+
+
+
+
 public class ControllerInstituicaoGUI {
 	
 	private InstituicaoGUI iGUI;
 	
 	public ControllerInstituicaoGUI() {
 		iGUI = new InstituicaoGUI();
+		iGUI.adicionarOuvinteInstituicao(new ouvinteInstituicao());
+		iGUI.setVisible(true);
 	}
 	
 	
@@ -32,17 +38,17 @@ public class ControllerInstituicaoGUI {
 	class ouvinteInstituicao implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			String comando = e.getActionCommand();
-			if (comando.equals("Entrar")) {
+			if (comando.equals("ENVIAR")) {
 				String codigoMec = iGUI.getTextFieldCod();	
 				String nomeInstituicao = iGUI.getTextFieldNome();
 				int anoDeFundacao = Integer.parseInt(iGUI.getTextFieldAno());
 				String tipo = (String) iGUI.getComboBoxTipo().getSelectedItem();
+				
 				if (!cadastraInstituicao(codigoMec, nomeInstituicao, tipo, anoDeFundacao)) {
 					JOptionPane.showMessageDialog(null, "Preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
-				} else {
-					Instituicao instituicaoModel = new Instituicao(codigoMec, nomeInstituicao, tipo, anoDeFundacao);
-					JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
 				}
+			}else if(comando.equals("LIMPAR")) {
+				iGUI.limparCampos();
 			}
 		}
 	}
