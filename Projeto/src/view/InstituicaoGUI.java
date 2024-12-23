@@ -43,7 +43,6 @@ public class InstituicaoGUI extends JFrame {
 	private JButton btnlimpar; 
 	private JTable tabela;
 	private DefaultTableModel tabletabela;
-	private JTable table;
 	/**
 	 * inicializa a janela;
 	 */
@@ -164,15 +163,16 @@ public class InstituicaoGUI extends JFrame {
 	    btnlimpar.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(btnlimpar);
 	    
+	    definirColunas();
 	    String[] titulo = {"nome", "codigo do MEC", "Ano de Fundacao", "tipo"};
-		tabela = new JTable();
+		tabela = new JTable(tabletabela);
 	    tabela.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 	    tabela.setFont(new Font("Calibri", Font.PLAIN, 11));
 	    tabela.setBounds(36, 297, 206, 162);
 	    contentPane.add(tabela);
 	    
-	    JScrollPane scrollPane = new JScrollPane();
-	    scrollPane.setBounds(216, 296, 26, 136);
+	    JScrollPane scrollPane = new JScrollPane(tabela);
+	    scrollPane.setBounds(26, 296, 216, 163);
 	    contentPane.add(scrollPane);
 	    
 	}
@@ -215,7 +215,13 @@ public class InstituicaoGUI extends JFrame {
 	}
 	 
 	public void definirColunas() {
+		
 		tabletabela = new DefaultTableModel();
+		tabletabela.addColumn("nome");
+		tabletabela.addColumn("codigo do MEC");	
+		tabletabela.addColumn("ano de fundacao");	
+		tabletabela.addColumn("tipo");
+		
 	}
 }
 
