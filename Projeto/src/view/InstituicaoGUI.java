@@ -1,10 +1,14 @@
 /**
  * Classe criada para servir como base da tela de cadastro;
- * data de criação:21/12/2024;
- * @author Victória, Hugo e Davi;
+ * data de criacao:21/12/2024;
+ * @author Victoria, Hugo e Davi;
  */
 
 package view;
+
+/**
+ * Importacoes de pacotes e classes necessa
+ */
 
 import java.awt.EventQueue;
 
@@ -44,6 +48,7 @@ public class InstituicaoGUI extends JFrame {
 	private JTable tabela;
 	private DefaultTableModel tabletabela;
 	private JScrollPane scrollPane;
+	
 	/**
 	 * inicializa a janela;
 	 */
@@ -73,17 +78,16 @@ public class InstituicaoGUI extends JFrame {
 	    setContentPane(contentPane);
 
 	    /**
-	     * adiciona o texto para o c�digo;
+	     * adiciona o texto para o codigo;
 	     */
 	    contentPane.setLayout(null);
-
 	    lblCodMec = new JLabel("Codigo do MEC");
 	    lblCodMec.setBounds(26, 11, 113, 28);
 	    lblCodMec.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(lblCodMec);
 
 	    /**
-	     * adiciona o campo para c�digo;
+	     * adiciona o campo para codigo;
 	     */
 	    textFieldCod = new JTextField();
 	    textFieldCod.setBounds(26, 38, 216, 20);
@@ -107,7 +111,7 @@ public class InstituicaoGUI extends JFrame {
 	    textFieldNome.setColumns(10);
 
 	    /**
-	     * adiciona o texto para o ano de funda��o;
+	     * adiciona o texto para o ano de fundacao;
 	     */
 	    lblAnoDeFundacao = new JLabel("Ano de Fundacao");
 	    lblAnoDeFundacao.setBounds(26, 129, 127, 28);
@@ -115,7 +119,7 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(lblAnoDeFundacao);
 
 	    /**
-	     * adiciona o campo para o ano de funda��o;
+	     * adiciona o campo para o ano de fundacao;
 	     */
 	    textFieldAno = new JTextField();
 	    textFieldAno.setBounds(26, 159, 216, 20);
@@ -123,16 +127,18 @@ public class InstituicaoGUI extends JFrame {
 	    textFieldAno.setColumns(10);
 
 	    /**
-	     * adiciona o texto para o tipo de institui��o;
+	     * adiciona o texto para o tipo de instituicao;
 	     */
+	    
 	    lblTipo = new JLabel("Tipo:");
 	    lblTipo.setBounds(26, 190, 59, 20);
 	    lblTipo.setFont(new Font("Calibri", Font.PLAIN, 17));
 	    contentPane.add(lblTipo);
 
 	    /**
-	     * adiciona a caixa para os tipos de institui��o;
+	     * adiciona a caixa para os tipos de instituicao;
 	     */
+	    
 	    setComboBoxTipo(new JComboBox());
 	    getComboBoxTipo().setBounds(26, 223, 216, 28);
 	    getComboBoxTipo().setModel(new DefaultComboBoxModel(new String[] {
@@ -149,7 +155,7 @@ public class InstituicaoGUI extends JFrame {
 	    btnEnviar = new JButton("ENVIAR");
 	    btnEnviar.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
-	            // L�gica do bot�o ENVIAR
+	            // L�gica do botao ENVIAR
 	        }
 	    });
 	    btnEnviar.setBounds(26, 262, 89, 23);
@@ -157,7 +163,7 @@ public class InstituicaoGUI extends JFrame {
 	    contentPane.add(btnEnviar);
 
 	    /**
-	     * adiciona o bot�o para limpar;
+	     * adiciona o botao para limpar;
 	     */
 	    btnlimpar = new JButton("LIMPAR"); // Use o atributo da classe
 	    btnlimpar.setBounds(153, 262, 89, 23);

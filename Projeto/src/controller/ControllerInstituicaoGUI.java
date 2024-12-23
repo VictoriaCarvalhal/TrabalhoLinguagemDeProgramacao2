@@ -39,6 +39,7 @@ public class ControllerInstituicaoGUI {
 	        String comando = e.getActionCommand();
 	        if (comando.equals("ENVIAR")) {
 	            try {
+	            	
 	                String codigoMec = iGUI.getTextFieldCod();
 	                String nomeInstituicao = iGUI.getTextFieldNome();
 	                String anoStr = iGUI.getTextFieldAno().trim();
