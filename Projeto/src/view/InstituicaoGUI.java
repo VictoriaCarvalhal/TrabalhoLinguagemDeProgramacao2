@@ -43,6 +43,7 @@ public class InstituicaoGUI extends JFrame {
 	private JButton btnlimpar; 
 	private JTable tabela;
 	private DefaultTableModel tabletabela;
+	private JScrollPane scrollPane;
 	/**
 	 * inicializa a janela;
 	 */
@@ -171,7 +172,7 @@ public class InstituicaoGUI extends JFrame {
 	    tabela.setBounds(36, 297, 206, 162);
 	    contentPane.add(tabela);
 	    
-	    JScrollPane scrollPane = new JScrollPane(tabela);
+	    scrollPane = new JScrollPane(tabela);
 	    scrollPane.setBounds(26, 296, 216, 163);
 	    contentPane.add(scrollPane);
 	    
@@ -224,9 +225,15 @@ public class InstituicaoGUI extends JFrame {
 		
 	}
 	
-	public void adicionarInfo() {
-		
+	public void adicionarInfo(String nome, String codigoDoMec, int anoDeFundacao, String tipo) {
+		String AnDFund = Integer.toString(anoDeFundacao);
+		Object[] dados = {nome, codigoDoMec, AnDFund, tipo};
+		tabletabela.addRow(dados);
+		if(!scrollPane.isVisible()) {
+			scrollPane.setVisible(true);
+		}
 	}
+	
 }
 
 

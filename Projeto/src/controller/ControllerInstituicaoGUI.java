@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 
 import view.InstituicaoGUI;
 import modelo.Instituicao;
+import view.InstituicaoGUI;
 
 public class ControllerInstituicaoGUI {
 	
@@ -43,7 +44,8 @@ public class ControllerInstituicaoGUI {
 	                String anoStr = iGUI.getTextFieldAno().trim();
 	                String tipo = (String) iGUI.getComboBoxTipo().getSelectedItem();
 	                int anoDeFundacao = Integer.parseInt(anoStr);
-
+	                iGUI.adicionarInfo(nomeInstituicao, codigoMec, anoDeFundacao, tipo);
+	                
 	                // Validacoes para o campo ano
 	                if (!cadastraInstituicao(codigoMec, nomeInstituicao, tipo, anoDeFundacao)) {
 	                    JOptionPane.showMessageDialog(null, "Preencha todos os campos corretamente!", "Erro", JOptionPane.ERROR_MESSAGE);
