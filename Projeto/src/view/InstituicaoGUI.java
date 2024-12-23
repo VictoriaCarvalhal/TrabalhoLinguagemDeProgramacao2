@@ -223,6 +223,10 @@ public class InstituicaoGUI extends JFrame {
 		tabletabela.addColumn("tipo");
 		
 	}
+	
+	public void adicionarInfo() {
+		
+	}
 }
 
 

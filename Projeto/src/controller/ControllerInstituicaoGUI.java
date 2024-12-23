@@ -23,9 +23,11 @@ public class ControllerInstituicaoGUI {
 			JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
 			return false;
 		}
+		
 		Instituicao instituicao = new Instituicao(codigoDoMec, nome, tipo, anoDeFundacao);
 		JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
 		return true;
+		
 	}
 	public InstituicaoGUI getInstituicao() {
 		return iGUI;
@@ -42,13 +44,13 @@ public class ControllerInstituicaoGUI {
 	                String tipo = (String) iGUI.getComboBoxTipo().getSelectedItem();
 	                int anoDeFundacao = Integer.parseInt(anoStr);
 
-	                // Validações para o campo ano
+	                // Validacoes para o campo ano
 	                if (!cadastraInstituicao(codigoMec, nomeInstituicao, tipo, anoDeFundacao)) {
 	                    JOptionPane.showMessageDialog(null, "Preencha todos os campos corretamente!", "Erro", JOptionPane.ERROR_MESSAGE);
 	                }
 	                
 	            } catch (NumberFormatException ex) {
-	                JOptionPane.showMessageDialog(null, "O campo 'Ano de Fundação' deve conter apenas números!", "Erro", JOptionPane.ERROR_MESSAGE);
+	                JOptionPane.showMessageDialog(null, "O campo 'Ano de Fundacao deve conter apenas numeros!", "Erro", JOptionPane.ERROR_MESSAGE);
 	            }
 	        } else if (comando.equals("LIMPAR")) {
 	            iGUI.limparCampos();
